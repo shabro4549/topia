@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Jungle</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="videoContainer">
+      <video autoplay loop id="myVideo">
+        <source src="videos/jungle.mp4" type="video/mp4">
+     </video>
+  </div>
+  <!-- <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
+    <audio id="ID" loop>
+    <source src="videos/sounds.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <script>
+      document.addEventListener('click', musicPlay);
+function musicPlay() {
+    document.getElementById('ID').play();
+    document.removeEventListener('click', musicPlay);
+}
+    </script>
+    
+
+<h1>
+  <a href="" class="typewrite" data-period="2000" data-type='[ 
+  "Rumor has it...", 
+  "There was once a secret community hidden deep within the jungle.", 
+  "Known to have unlocked technology far beyond anything we’ve seen.", 
+  "Their own governance systems.", 
+  "Their own languages.", 
+  "Their own way of life.", 
+  "Long ago, they were separated. Each member sprawled across the globe. Forced to blend in with modern society.", 
+  "Now, they’re looking to find their way back to each other.", 
+  "Little is known about them", 
+  "but they are said to refer to themselves as ...", 
+  "Degens", 
+  "Are you one of them?",
+  "Now is your chance...",
+  "to come home."
+  ]'>
+
+
+    <span class="wrap"></span>
+  </a>
+</h1>
+
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
