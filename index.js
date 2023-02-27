@@ -1,85 +1,194 @@
-var TxtType = function (el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = "";
-  this.tick();
-  this.isDeleting = false;
+// var TxtType = function (el, toRotate, period) {
+//   this.toRotate = toRotate;
+//   this.el = el;
+//   this.loopNum = 0;
+//   this.period = parseInt(period, 10) || 2000;
+//   this.txt = "";
+//   this.tick();
+//   this.isDeleting = false;
+// };
+
+// TxtType.prototype.tick = function () {
+//   if (this.loopNum >= this.toRotate.length) {
+//     this.el.innerHTML =
+//       '<span class="end">' +
+//       '<img src="images/topia-logo.png" class="topia">' +
+//       "</img>" +
+//       "</span>" +
+//       '<span class="end">' +
+//       '<a href="https://www.eventbrite.ca/" class="button">' +
+//       "RSVP";
+//     "</a>" + "</span>";
+//     return;
+//   }
+
+//   var fullTxt = this.toRotate[this.loopNum];
+
+//   if (this.isDeleting) {
+//     this.txt = fullTxt.substring(0, this.txt.length - 1);
+//   } else {
+//     this.txt = fullTxt.substring(0, this.txt.length + 1);
+//   }
+
+//   this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+//   var that = this;
+//   var delta = 180 - Math.random() * 100;
+
+//   if (this.isDeleting) {
+//     delta /= 12;
+//   }
+
+//   if (!this.isDeleting && this.txt === fullTxt) {
+//     delta = this.period;
+//     this.isDeleting = true;
+//   } else if (this.isDeleting && this.txt === "") {
+//     this.isDeleting = false;
+//     this.loopNum++;
+//     delta = 500;
+//   }
+
+//   setTimeout(function () {
+//     that.tick();
+//   }, delta);
+// };
+
+// window.onload = function () {
+//   var elements = document.getElementsByClassName("typewrite");
+//   for (var i = 0; i < elements.length; i++) {
+//     var toRotate = elements[i].getAttribute("data-type");
+//     var period = elements[i].getAttribute("data-period");
+//     if (toRotate) {
+//       new TxtType(elements[i], JSON.parse(toRotate), period);
+//     }
+//   }
+//   // INJECT CSS
+//   var css = document.createElement("style");
+//   css.type = "text/css";
+//   css.innerHTML = ".typewrite > .wrap { }";
+//   document.body.appendChild(css);
+// };
+
+const elts = {
+  text1: document.getElementById("text1"),
+  text2: document.getElementById("text2"),
 };
 
-TxtType.prototype.tick = function () {
-  if (this.loopNum >= this.toRotate.length) {
-    this.el.innerHTML =
-      '<span class="end">' +
-      "JUNGLE" +
-      "<br>" +
-      "</span>" +
-      '<span id="demo">' +
-      "NFT NYC" +
-      "<br>" +
-      "Nebula" +
-      "<br>" +
-      "April 13th, 2023" +
-      "<br>" +
-      "8pm" +
-      "</span>" +
-      '<img src="images/naru.png" alt="naru" class="naru">' +
-      "</img>" +
-      '<img src="images/clay.png" alt="clay" class="clay">' +
-      "</img>" +
-      '<img src="images/kong.png" alt="kong" class="kong">' +
-      "</img>";
-    return;
+const texts = [
+  "Deep in the jungle",
+  "where the creatures play",
+  "You are invited",
+  "to dance the night away",
+];
+
+const morphTime = 1.5;
+const cooldownTime = 1;
+
+let textIndex = -1;
+let time = new Date();
+let morph = 0;
+let cooldown = cooldownTime;
+
+elts.text1.textContent = texts[textIndex % texts.length];
+elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+function doMorph() {
+  morph -= cooldown;
+  cooldown = 0;
+
+  let fraction = morph / morphTime;
+
+  if (fraction > 1) {
+    cooldown = cooldownTime;
+    fraction = 1;
   }
 
-  var fullTxt = this.toRotate[this.loopNum];
+  setMorph(fraction);
+}
 
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
+function setMorph(fraction) {
+  elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+  elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
-  this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+  fraction = 1 - fraction;
+  elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+  elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
-  var that = this;
-  var delta = 180 - Math.random() * 100;
+  elts.text1.textContent = texts[textIndex % texts.length];
+  elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+}
 
-  if (this.isDeleting) {
-    delta /= 12;
-  }
+function doCooldown() {
+  morph = 0;
 
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === "") {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+  elts.text2.style.filter = "";
+  elts.text2.style.opacity = "100%";
 
-  setTimeout(function () {
-    that.tick();
-  }, delta);
-};
+  elts.text1.style.filter = "";
+  elts.text1.style.opacity = "0%";
+}
 
-window.onload = function () {
-  var elements = document.getElementsByClassName("typewrite");
-  // var x = document.getElementById("myAudio");
-  // x.play();
-  // console.log("x is...");
-  // console.log(x);
-  for (var i = 0; i < elements.length; i++) {
-    var toRotate = elements[i].getAttribute("data-type");
-    var period = elements[i].getAttribute("data-period");
-    if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
+function animate() {
+  if (textIndex < texts.length - 1) {
+    requestAnimationFrame(animate);
+
+    let newTime = new Date();
+    let shouldIncrementIndex = cooldown > 0;
+    let dt = (newTime - time) / 1000;
+    time = newTime;
+
+    cooldown -= dt;
+
+    if (cooldown <= 0) {
+      if (shouldIncrementIndex) {
+        textIndex++;
+      }
+
+      doMorph();
+    } else {
+      doCooldown();
     }
+  } else {
+    console.log("done");
+    document.getElementById("but").style.visibility = "visible";
+    document.getElementById("but").addEventListener("click", animateTopia);
   }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { }";
-  document.body.appendChild(css);
-};
+  // document.getElementById("overlay").style.visibility = "visible";
+  // document.getElementById("jpg").style.visibility = "visible";
+  // document.getElementById("logo").style.visibility = "visible";
+  // document.getElementById("leaf-top").style.visibility = "visible";
+  // document.getElementById("leaf-bottom").style.visibility = "visible";
+}
+
+function animateTopia() {
+  document.getElementById("overlay").classList.add("fade-in-image");
+  document.getElementById("overlay").style.visibility = "visible";
+  document.getElementById("jpg").classList.add("fade-in-image");
+  document.getElementById("jpg").style.visibility = "visible";
+  document.getElementById("logo").classList.add("fade-in-image");
+  document.getElementById("logo").style.visibility = "visible";
+  document.getElementById("leaf-top").classList.add("fade-in-image");
+  document.getElementById("leaf-top").style.visibility = "visible";
+  document.getElementById("leaf-bottom").classList.add("fade-in-image");
+  document.getElementById("leaf-bottom").style.visibility = "visible";
+  document.getElementById("but").style.visibility = "hidden";
+  document.getElementById("text1").style.visibility = "hidden";
+  document.getElementById("text2").style.visibility = "hidden";
+}
+
+animate();
+
+// "<br>" +
+// "<br>" +
+// "<br>" +
+// "<br>" +
+// "<br>" +
+// '<span id="demo">' +
+// "NFT NYC" +
+// "<br>" +
+// "Nebula" +
+// "<br>" +
+// "April 13th, 2023" +
+// "<br>" +
+// "8pm" +
+// "</span>"

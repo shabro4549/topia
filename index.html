@@ -7,37 +7,80 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <div class="videoContainer">
       <video autoplay loop muted>
-        <source src="videos/jungle.mp4" type="video/mp4">
-     </video>
-  </div>
-  <!-- <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
+        <source src="videos/topia.mp4" type="video/mp4"> -->
+          <source src="videos/jungle.webm" type="video/webm">
+      </video>
+  </div>  
+  <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
     <audio id="ID" loop>
-    <source src="videos/sounds.mp3" type="audio/mpeg">
+    <source src="videos/sabai.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
+    <img id="volume" src="images/volume-off.svg" class="play"></img>
+    <!-- <a href="https://www.eventbrite.ca/" class="button">RSVP</a> -->
     <script>
       document.addEventListener('click', musicPlay);
+
 function musicPlay() {
     document.getElementById('ID').play();
-    document.removeEventListener('click', musicPlay);
+    document.getElementById('volume').src = "images/volume-on.svg";
+    
 }
     </script>
-    
 
-<h1>
+<div id="overlay"></div>
+
+<!-- <a></a> -->
+<div id="but" class="but floating">
+  <div class="ready">I'M READY</div>
+</div>
+
+      <span id="text1"></span>
+      <span id="text2"></span>
+      
+      <!-- <img id="button" class="button floating" src="images/button.svg"></img> -->
+      <img id="jpg" class="jpg" src="images/jpg-log.png"></img>
+      <!-- <div class="fade-in-image"> -->
+        <img id="logo" class="topia" src="images/topia-plain.png"></img>
+      <!-- </div> -->
+      
+      <img id="leaf-top" class="leaf-top" src="images/leaf-top.png"></img>
+      <img id="leaf-bottom" class="leaf-bottom" src="images/leaf-bottom.png"></img> 
+<!-- 
+
+      <form action="/action_page.php">
+        <input class="text-input" type="text" id="fname" name="fname" placeholder="Enter your secret code"><br><br>
+        <input class="button1" type="submit" value="LET'S GO">
+      </form> -->
+
+  
+  <svg id="filters">
+      <defs>
+          <filter id="threshold">
+              <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 255 -140" />
+          </filter>
+      </defs>
+  </svg>
+
+  <img id="topia" src="" class=""></img>
+<!-- <h1>
   <a href="" class="typewrite" data-period="2000" data-type='[ 
-  "Rumor has it...", 
-  "There was once a secret community hidden deep within the jungle.", 
-  "Known to have unlocked technology far beyond anything we’ve seen.", 
-  "Long ago, they were separated. Each member sprawled across the globe. Forced to blend in with modern society.", 
-  "Now, they’re looking to find their way back to each other.", 
+  "Deep in the jungle", 
+  "Sprawled across the globe, hidden amoung us.",
   "Little is known about them", 
   "but they are said to refer to themselves as ...", 
   "Degens", 
@@ -49,7 +92,7 @@ function musicPlay() {
 
     <span class="wrap"></span>
   </a>
-</h1>
+</h1> -->
 
   <script src="index.js" charset="utf-8"></script>
 </body>
