@@ -161,8 +161,6 @@ video {
   color: white;
   font-size: 1.75rem;
 }
-<<<<<<< HEAD
-=======
 
 .ready {
 
@@ -182,6 +180,7 @@ video {
   text-fill-color: transparent;
   width: fit-content;
 }
+
 .but{
   visibility: hidden;
 
@@ -204,6 +203,7 @@ video {
   padding: 26px 53px;
   position: relative;
   width: fit-content;
+  /* font-family: "Montserrat", sans-serif; */
 
 /* box-sizing: border-box;
 
@@ -300,4 +300,3 @@ width: 800px;
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
->>>>>>> origin/master
