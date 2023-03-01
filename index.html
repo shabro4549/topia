@@ -33,7 +33,7 @@
       document.addEventListener('click', musicPlay);
 
 function musicPlay() {
-    document.getElementById('ID').play();
+    // document.getElementById('ID').play();
     document.getElementById('volume').src = "images/volume-on.svg";
     
 }
@@ -50,19 +50,31 @@ function musicPlay() {
       <span id="text2"></span>
       
       <!-- <img id="button" class="button floating" src="images/button.svg"></img> -->
-      <img id="jpg" class="jpg" src="images/jpg-log.png"></img>
+      <img id="jpg" class="jpg" src="images/jpg-logo.png"></img>
+      <img id="presents" class="presents" src="images/presents.png"></img>
+
       <!-- <div class="fade-in-image"> -->
-        <img id="logo" class="topia" src="images/topia-plain.png"></img>
+      <img id="logo" class="topia" src="images/topia-plain.png"></img>
       <!-- </div> -->
       
       <img id="leaf-top" class="leaf-top" src="images/leaf-top.png"></img>
       <img id="leaf-bottom" class="leaf-bottom" src="images/leaf-bottom.png"></img> 
-<!-- 
 
-      <form action="/action_page.php">
-        <input class="text-input" type="text" id="fname" name="fname" placeholder="Enter your secret code"><br><br>
-        <input class="button1" type="submit" value="LET'S GO">
-      </form> -->
+      <img id="topia-leaves" class="topia-leaves" src="images/topia-leaves.png"></img>
+
+      <p id="description">A rager in the jungle to celebrate the crypto community</p>
+      <img id="details" class="details" src="images/event-details.png"></img>
+
+
+      <form action="https://www.eventbrite.ca/e/topia-tickets-541986515257" id="input" class="input">
+        <input class="text-input" type="text" id="discount" name="discount" placeholder="Enter your VIP code here"><br><br>
+        <input type="submit" hidden />
+      </form>
+
+      <p id="collections">Hosted with</p>
+      <img id="alley" class="alley" src="images/alley.png"></img>
+
+      
 
   
   <svg id="filters">

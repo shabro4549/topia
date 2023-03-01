@@ -61,10 +61,22 @@ video {
   z-index: 2;
 }
 
+.topia-leaves { 
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* top: 120px; */
+  margin: 0 auto;
+  height: 50%;
+  z-index: 2;
+}
+
 
 .floating { 
   animation-name: floating;
   animation-duration: 3s;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   margin-left: 30px;
@@ -78,14 +90,14 @@ video {
 }
 
 .jpg {
-  visibility: hidden;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 315px;
-  margin: 0 auto;
-  height: 4%;
-  z-index: 2;
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 385px;
+    margin: 0 auto;
+    height: 23%;
+    z-index: 2;
 }
 
 #overlay {
@@ -104,13 +116,14 @@ video {
 
 .leaf-top {
   visibility: hidden;
+  /* opacity: 0; */
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   margin: 0;
   width: 100%;
-  height: 40%;
+  height: 38%;
   z-index: 1;
 }
 
@@ -122,7 +135,7 @@ video {
   bottom: 0;
   margin: 0;
   width: 100%;
-  height: 40%;
+  height: 38%;
   z-index: 1;
 }
 
@@ -203,39 +216,22 @@ video {
   padding: 26px 53px;
   position: relative;
   width: fit-content;
-  /* font-family: "Montserrat", sans-serif; */
-
-/* box-sizing: border-box;
-
-/* Auto layout */
-
-/* display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: flex-start; */
-/* padding: 28px 20px; */
-/* gap: 5.15px; */
-
-/* position: absolute;
-width: 200px;
-height: 75px;
-left: calc(50% - 294px/2);
-top: 4.69%;
-bottom: 74.41%;
-  background: linear-gradient(93.15deg, rgba(126, 7, 133, 0.26) 14.05%, rgba(13, 102, 121, 0.26) 90.99%);
-
-  border-image: linear-gradient(rgba(255, 157, 255, 1), rgba(10, 175, 136, 1)) 30;
-  border-radius: 13px;
-border-width: 2px;
-border-style: solid;  */
 }
-/* .border-wrap {
-  max-width: 10px;
-  padding: 0.25rem;
-  position: relative;
-  background: linear-gradient(to right, red, purple);
-  padding: 3px;
-} */
+
+
+
+.presents {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 640px;
+  margin: 0 auto;
+  height: 1.7%;
+  opacity: 53%;
+  z-index: 2;
+}
+
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
 
@@ -246,11 +242,6 @@ border-style: solid;  */
   /* height: 80pt; */
   top: 0;
   bottom: 0; */
-
-
-/* 
-  filter: url(#threshold) blur(0.6px); */
-
 }
 
 #text1,
@@ -266,6 +257,86 @@ border-style: solid;  */
   text-align: center;
 width: 800px;
   user-select: none;
+}
+
+p {
+  visibility: hidden;
+  color: #FFFFFF;
+  position: absolute;
+  z-index: 2;
+  /* letter-spacing: 2px; */
+  /* display: flex;
+  justify-content: center; */
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  text-align: center;
+  width: 900px;
+  top: 395px;
+}
+
+.details {
+  font-size: 1.75rem;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 500px;
+  margin: 0 auto;
+  height: 11%;
+  z-index: 2;
+}
+
+.collections {
+  visibility: hidden;
+  font-size: 1rem;
+  top: 750px;
+}
+
+.alley {
+  visibility: hidden;
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  margin: 0 auto;
+  height: 14%;
+  z-index: 2;
+}
+
+.input {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 650px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.text-input {
+  width: 550px;
+  height: 70px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  background: rgba(172, 255, 155, 0.21);
+border: 1px solid #ACFF9B;
+border-radius: 12px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 1.75rem;
+line-height: 37px;
+text-align: center;
+color: #ACFF9B;
+
+}
+
+input::placeholder {
+  color: #ACFF9B;
+  opacity: 1;
 }
 
 .fade-in-image {
@@ -300,3 +371,165 @@ width: 800px;
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+.elementToFadeInAndOut {
+  animation: fadeInOut 6s linear 1 forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.elementToFadeInAndOutSlow {
+  animation: fadeInOutSlow 3s linear 1 forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeInOutSlow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 53%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.elementToFadeInAndOutTopia {
+  animation: fadeInOutTopia 3s linear 1 forwards;
+  animation-delay: 5s;
+}
+
+@keyframes fadeInOutTopia {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.elementToFadeInAndOutLeaves {
+  /* animation: fadeIn 1s; */
+  animation: 2s linear slidein, 2s ease-out 4s slideout forwards;
+  /* transition-delay: 5s; */
+}
+
+@keyframes slidein {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
+@keyframes slideout {
+  0% { opacity: 1;}
+  100% { opacity: 0;}
+}
+
+.elementToFadeInAndOutTopiaLeaves {
+  animation: fadeInOutTopiaLeaves forwards, moveUp forwards;
+  animation-duration: 2s, 2s; 
+  animation-delay: 5s, 7s;
+}
+
+@keyframes fadeInOutTopiaLeaves {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+ @keyframes moveUp {
+  0% {
+    top: 250px;
+  }
+  100% {
+    top: 65px;
+  } 
+}
+
+.elementToFadeInAndOutText {
+  animation: fadeInOutText 2s linear 1 forwards;
+  animation-delay: 8s;
+}
+
+@keyframes fadeInOutText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+
+.fade-in-text {
+  animation: fadeIn 1s forwards;
+  animation-delay: 12s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* .fade-in-topia-leaves {
+  animation: fadeInLeaves 1s;
+  animation-delay: 10s;
+  -webkit-animation: fadeInLeaves 1s;
+  -moz-animation: fadeInLeaves 1s;
+  -o-animation: fadeInLeaves 1s;
+  -ms-animation: fadeInLeaves 1s;
+}
+
+@keyframes fadeInLeaves {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeInLeaves {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeInLeaves {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeInLeaves {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeInLeaves {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+} */
+
+
+
+

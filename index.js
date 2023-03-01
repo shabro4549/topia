@@ -74,12 +74,11 @@ const elts = {
   text2: document.getElementById("text2"),
 };
 
-const texts = [
-  "Deep in the jungle",
-  "where the creatures play",
-  "You are invited",
-  "to dance the night away",
-];
+const texts = ["Deep in the jungle"];
+
+// "where the creatures play",
+// "You are invited",
+// "to dance the night away",
 
 const morphTime = 1.5;
 const cooldownTime = 1;
@@ -150,6 +149,7 @@ function animate() {
     }
   } else {
     console.log("done");
+    // document.getElementById("but").classList.add("fade-in-image");
     document.getElementById("but").style.visibility = "visible";
     document.getElementById("but").addEventListener("click", animateTopia);
   }
@@ -161,19 +161,56 @@ function animate() {
 }
 
 function animateTopia() {
-  document.getElementById("overlay").classList.add("fade-in-image");
-  document.getElementById("overlay").style.visibility = "visible";
-  document.getElementById("jpg").classList.add("fade-in-image");
-  document.getElementById("jpg").style.visibility = "visible";
-  document.getElementById("logo").classList.add("fade-in-image");
-  document.getElementById("logo").style.visibility = "visible";
-  document.getElementById("leaf-top").classList.add("fade-in-image");
-  document.getElementById("leaf-top").style.visibility = "visible";
-  document.getElementById("leaf-bottom").classList.add("fade-in-image");
-  document.getElementById("leaf-bottom").style.visibility = "visible";
   document.getElementById("but").style.visibility = "hidden";
   document.getElementById("text1").style.visibility = "hidden";
   document.getElementById("text2").style.visibility = "hidden";
+
+  document.getElementById("overlay").classList.add("fade-in-image");
+  document.getElementById("overlay").style.visibility = "visible";
+  document.getElementById("jpg").classList.add("elementToFadeInAndOut");
+  document.getElementById("jpg").style.visibility = "visible";
+  document
+    .getElementById("presents")
+    .classList.add("elementToFadeInAndOutSlow");
+  document.getElementById("presents").style.visibility = "visible";
+  document.getElementById("presents").style.opacity = "0";
+  // document.getElementById("logo").classList.add("elementToFadeInAndOutTopia");
+  // document.getElementById("logo").style.visibility = "visible";
+  // document.getElementById("logo").style.opacity = "0";
+  document
+    .getElementById("leaf-top")
+    .classList.add("elementToFadeInAndOutLeaves");
+  document.getElementById("leaf-top").style.visibility = "visible";
+  document
+    .getElementById("leaf-bottom")
+    .classList.add("elementToFadeInAndOutLeaves");
+  document.getElementById("leaf-bottom").style.visibility = "visible";
+
+  document.getElementById("topia-leaves").style.opacity = "0";
+  document.getElementById("topia-leaves").style.visibility = "visible";
+  document
+    .getElementById("topia-leaves")
+    .classList.add("elementToFadeInAndOutTopiaLeaves");
+  document
+    .getElementById("description")
+    .classList.add("elementToFadeInAndOutText");
+  document.getElementById("description").style.visibility = "visible";
+  document.getElementById("description").style.opacity = "0";
+  document.getElementById("details").classList.add("elementToFadeInAndOutText");
+  document.getElementById("details").style.visibility = "visible";
+  document.getElementById("details").style.opacity = "0";
+  document.getElementById("input").classList.add("elementToFadeInAndOutText");
+  document.getElementById("input").style.visibility = "visible";
+  document.getElementById("input").style.opacity = "0";
+  document
+    .getElementById("collections")
+    .classList.add("elementToFadeInAndOutText");
+  // document.getElementById("collections").style.visibility = "visible";
+  // document.getElementById("collections").style.opacity = "0";
+  document.getElementById("alley").classList.add("elementToFadeInAndOutText");
+  document.getElementById("alley").style.visibility = "visible";
+  document.getElementById("alley").style.opacity = "0";
+  // document.getElementById("topia-leaves").style.bottom = "300px";
 }
 
 animate();
