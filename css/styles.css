@@ -292,18 +292,11 @@ video {
   position: fixed;
   left: 0;
   right: 0;
-  top: 640px;
+  top: 63%;
   margin: 0 auto;
   height: 1.7%;
   opacity: 53%;
   z-index: 2;
-}
-
-@media screen and (max-width: 800px) {
-  .presents {
-    top: 60px;
-    top: 540px;
-  }
 }
 
 
@@ -390,14 +383,20 @@ video {
 
 #copy {
   position: absolute;
-  top:41%;
+  top:7%;
   bottom: 0;
   left: 0;
   right: 0;
   
-  margin: auto;
+  margin: 360px auto;
   z-index: 3;
 }
+
+@media screen and (max-width: 600px) {
+  #copy{
+    top:0%;
+}
+
 
 .contents{
     position: absolute;

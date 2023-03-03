@@ -88,6 +88,7 @@ let textIndex = -1;
 let time = new Date();
 let morph = 0;
 let cooldown = cooldownTime;
+var abort = false;
 
 elts.text1.textContent = texts[textIndex % texts.length];
 elts.text2.textContent = texts[(textIndex + 1) % texts.length];
@@ -149,10 +150,14 @@ function animate() {
       doCooldown();
     }
   } else {
-    console.log("done");
-    // document.getElementById("but").classList.add("fade-in-image");
-    document.getElementById("but").style.visibility = "visible";
-    document.getElementById("but").addEventListener("click", animateTopia);
+    if (abort) {
+      return;
+    } else {
+      console.log("done");
+      // document.getElementById("but").classList.add("fade-in-image");
+      document.getElementById("but").style.visibility = "visible";
+      document.getElementById("but").addEventListener("click", animateTopia);
+    }
   }
   // document.getElementById("overlay").style.visibility = "visible";
   // document.getElementById("jpg").style.visibility = "visible";

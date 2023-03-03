@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8" content="width=device-width, initial-scale=1" name="viewport" />
+  <meta charset="utf-8" content="width=device-width, height=device-height initial-scale=1" name="viewport" />
   <title>Jungle</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,7 @@ var volume = document.getElementById('volume');
 var ready = document.getElementById("ready");
 var but = document.getElementById("but");
 var sound = "off";
+var abort = false;
 
 if(body.addEventListener)
   body.addEventListener("click", bodyClick, false);
@@ -50,8 +51,11 @@ function bodyClick(event){
     skip.style.none = "none";
     console.log('skipped');
     console.log(event.target);
+    abort=true;
+    console.log(abort);
 
   document.getElementById("but").style.visibility = "hidden";
+  document.getElementById("ready").style.visibility = "hidden";
   document.getElementById("text1").style.visibility = "hidden";
   document.getElementById("text2").style.visibility = "hidden";
   document.getElementById("volume").style.visibility = "hidden";
