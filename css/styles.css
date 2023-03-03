@@ -393,8 +393,9 @@ video {
 }
 
 @media screen and (max-width: 600px) {
-  #copy{
-    top:0%;
+  #copy {
+    top: 0%;
+  }
 }
 
 

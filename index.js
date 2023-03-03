@@ -88,7 +88,6 @@ let textIndex = -1;
 let time = new Date();
 let morph = 0;
 let cooldown = cooldownTime;
-var abort = false;
 
 elts.text1.textContent = texts[textIndex % texts.length];
 elts.text2.textContent = texts[(textIndex + 1) % texts.length];
