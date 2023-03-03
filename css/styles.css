@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100vw;
   margin: 0;
 }
 
@@ -23,8 +23,32 @@ h1 {
   z-index: 0;
   font-size: 3rem;
   width: 40%;
-  /* letter-spacing: 2px; */
   font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  color: #898989;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+h3 { 
+  visibility: hidden;
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  width: 90%;
+  margin: 10px auto;
 }
 
 .videoContainer {
@@ -44,12 +68,29 @@ video {
 
 .play {
   position: fixed;
+  max-width: 3.25%;
   top: 6%;
   left: 5%;
-  height: 5%;
   z-index: 1;
 }
 
+.skip {
+  position: fixed;
+  top: 8%;
+  right: 5%;
+  width: 6%;
+  /* min-width: 6%; */
+  /* height: 4%; */
+  z-index: 1;
+}
+
+@media only screen and (max-width: 768px){
+  .skip {
+  width: 10%;
+  object-fit: contain;
+  }
+  }
+/* 
 .topia {
   visibility: hidden;
   position: fixed;
@@ -58,20 +99,27 @@ video {
   top: 385px;
   margin: 0 auto;
   height: 38%;
+  width: 100vw;
   z-index: 2;
-}
+} */
 
 .topia-leaves { 
   visibility: hidden;
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
-  /* top: 120px; */
+  top: 250px;
   margin: 0 auto;
-  height: 50%;
+  width: 50%;
+  height: auto;
   z-index: 2;
 }
 
+@media screen and (max-width: 600px) {
+  .topia-leaves {
+    width: 100%;
+  }
+}
 
 .floating { 
   animation-name: floating;
@@ -90,11 +138,11 @@ video {
 }
 
 .jpg {
-    visibility: hidden;
+    opacity: 0;
+    /* visibility: hidden; */
     position: fixed;
     left: 0;
     right: 0;
-    top: 385px;
     margin: 0 auto;
     height: 23%;
     z-index: 2;
@@ -123,7 +171,7 @@ video {
   top: 0;
   margin: 0;
   width: 100%;
-  height: 38%;
+  height: 35%;
   z-index: 1;
 }
 
@@ -135,8 +183,14 @@ video {
   bottom: 0;
   margin: 0;
   width: 100%;
-  height: 38%;
+  height: 35%;
   z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .leaf-top, .leaf-bottom{
+    height: 16%;
+  }
 }
 
 .button {
@@ -150,20 +204,20 @@ video {
   bottom: 250px;
   font-size: 2rem;
   font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 15px;
   height: 5%;
 }
 
-.kong {
-  /* transform: rotate(180deg); */
-  position: fixed;
+/* .kong {
+  position: absolute;
   bottom: 0px;
   right: 20%;
   height: 25%;
   z-index: 1;
-}
+} */
 
 .end {
   font-size: 6rem;
@@ -173,6 +227,10 @@ video {
 #demo {
   color: white;
   font-size: 1.75rem;
+}
+
+#it{
+  visibility: hidden;
 }
 
 .ready {
@@ -196,12 +254,9 @@ video {
 
 .but{
   visibility: hidden;
-
-  left: 130px;
   right: 0;
   top: 110px;
   margin: 0 auto;
-
   align-items: flex-start;
   background: linear-gradient(180deg, rgba(126.4, 6.64, 132.81, 0.26) 0%, rgba(13.12, 101.68, 121.12, 0.26) 100%);
   border: 2px, solid;
@@ -210,14 +265,26 @@ video {
   border-radius: 13px;
   display: flex;
   gap: 5.15px;
-  height: 16px;
+  height: 1.7%;
   justify-content: center;
   overflow: hidden;
   padding: 26px 53px;
   position: relative;
   width: fit-content;
+  z-index: 5;
 }
 
+@media screen and (max-width: 800px) {
+  .but {
+    top: 60px;
+    height: 1.5%;
+    padding: 16px 63px;
+  }
+
+  .ready {
+    font-size: 0.9rem;
+  }
+}
 
 
 .presents {
@@ -232,6 +299,13 @@ video {
   z-index: 2;
 }
 
+@media screen and (max-width: 800px) {
+  .presents {
+    top: 60px;
+    top: 540px;
+  }
+}
+
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
 
@@ -239,6 +313,7 @@ video {
   /* position: absolute; */
   margin: auto;
   width: 100vw;
+  padding: padding: 7% 15%;
   /* height: 80pt; */
   top: 0;
   bottom: 0; */
@@ -247,77 +322,200 @@ video {
 #text1,
 #text2 {
   position: absolute;
-
   z-index: 0;
   font-size: 3rem;
-  /* letter-spacing: 2px; */
-  /* display: flex;
-  justify-content: center; */
   font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   text-align: center;
-width: 800px;
+  width: 100%;
+  margin: auto;
   user-select: none;
 }
 
-p {
+@media screen and (max-width: 800px) {
+  #text1,
+#text2 {
+    font-size: 1.15rem;
+  }
+}
+
+.details {
   visibility: hidden;
+  margin: 25px auto 10px;
+  width: 14%;
+  height: auto;
+  z-index: 2;
+}
+@media screen and (max-width: 800px) {
+  .details {
+    width: 35%;
+  }
+}
+
+#collections {
+  visibility: visible;
+  font-size: 1rem;
+  bottom: 50px;
+}
+
+.hosted {
+  visibility: hidden;
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  position: absolute;
+  /* text-align: center; */
+  top: 77%;
+  right: 47.4%;
+  margin: 0 auto;
+}
+
+.host {
+  opacity: 0;
+  /* visibility: hidden; */
+  display: none;
+  position: absolute;
+  background-color: black;
+  width: 100vw;
+  height: 1000px;
+  top: 90%;
+}
+@media screen and (max-width: 600px) {
+  .host {
+    top: 85%;
+    height: 580px;
+  }
+}
+
+#copy {
+  position: absolute;
+  top:41%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+  z-index: 3;
+}
+
+.contents{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: 50px auto;
+    z-index: 3;
+
+}
+
+@media screen and (max-width: 600px) {
+  .contents{
+    margin: 30px auto;
+}
+}
+/* p {
+  visibility: visible;
   color: #FFFFFF;
   position: absolute;
   z-index: 2;
-  /* letter-spacing: 2px; */
-  /* display: flex;
-  justify-content: center; */
+
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: 34px;
   text-align: center;
   width: 900px;
-  top: 395px;
-}
+  top: 50px;
 
-.details {
-  font-size: 1.75rem;
-  visibility: hidden;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 500px;
-  margin: 0 auto;
-  height: 11%;
-  z-index: 2;
-}
-
-.collections {
-  visibility: hidden;
-  font-size: 1rem;
-  top: 750px;
-}
-
+} */
 .alley {
-  visibility: hidden;
   border-radius: 50%;
-  position: fixed;
+  /* position: absolute;
   left: 0;
   right: 0;
+  top: 0;
   bottom: 50px;
-  margin: 0 auto;
-  height: 14%;
+  margin: 0 auto; */
+  margin: 3% 3%;
+  width: 11%;
   z-index: 2;
 }
+
+@media screen and (max-width: 600px) {
+  .alley {
+    width: 30%;
+  }
+}
+
+.tier2{
+  width: 100vw;
+  height: 10%;
+  background-color: red;
+  
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  margin: 90% auto 0;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.kong {
+  border-radius: 50%;
+  /* margin: 0 auto; */
+  margin: 1% 3%;
+  width: 9%;
+  height: auto;
+  z-index: 2;
+}
+
+@media screen and (max-width: 600px) {
+  .kong {
+    width: 23%;
+  }
+}
+.host-logo {
+  width: 16%;
+  margin: 2% auto 0;
+}
+
+@media screen and (max-width: 600px) {
+  .host-logo {
+    width: 40%;
+  }
+  
+}
+
+.host-description {
+  color: #BBBBBB;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 600px) {
+  .host-description {
+    font-size: 1.1rem;
+    margin: 10px 30px;
+  }
+}
+
 
 .input {
   visibility: hidden;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 650px;
-  margin: 0 auto;
+  margin: 10px auto;
   z-index: 2;
 }
 
 .text-input {
-  width: 550px;
+  width: 32%;
   height: 70px;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -327,11 +525,19 @@ border-radius: 12px;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
-font-size: 1.75rem;
+font-size: 1.75vw;
 line-height: 37px;
 text-align: center;
 color: #ACFF9B;
 
+}
+
+@media screen and (max-width: 600px) {
+  .text-input {
+    width: 75%;
+    height: 50px;
+    font-size: 4.50vw;
+  }
 }
 
 input::placeholder {
@@ -339,7 +545,7 @@ input::placeholder {
   opacity: 1;
 }
 
-.fade-in-image {
+.fade-in {
   animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
   -moz-animation: fadeIn 1s;
@@ -372,63 +578,8 @@ input::placeholder {
   100% { opacity: 1; }
 }
 
-.elementToFadeInAndOut {
-  animation: fadeInOut 6s linear 1 forwards;
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.elementToFadeInAndOutSlow {
-  animation: fadeInOutSlow 3s linear 1 forwards;
-  animation-delay: 2s;
-}
-
-@keyframes fadeInOutSlow {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 53%;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-
-
-.elementToFadeInAndOutTopia {
-  animation: fadeInOutTopia 3s linear 1 forwards;
-  animation-delay: 5s;
-}
-
-@keyframes fadeInOutTopia {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-
-.elementToFadeInAndOutLeaves {
-  /* animation: fadeIn 1s; */
-  animation: 2s linear slidein, 2s ease-out 4s slideout forwards;
-  /* transition-delay: 5s; */
+.fade-leaves {
+  animation: 0.6s linear slidein, 0.6s linear 4s slideout forwards;
 }
 
 @keyframes slidein {
@@ -441,11 +592,60 @@ input::placeholder {
   100% { opacity: 0;}
 }
 
-.elementToFadeInAndOutTopiaLeaves {
-  animation: fadeInOutTopiaLeaves forwards, moveUp forwards;
-  animation-duration: 2s, 2s; 
-  animation-delay: 5s, 7s;
+.fade-logo {
+  animation: 0.6s linear 1s slidein forwards, 0.6s linear 4s slideout forwards;
 }
+
+@keyframes slidein {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
+@keyframes slideout {
+  0% { opacity: 1;}
+  100% { opacity: 0;}
+}
+
+.fade-presents {
+  animation: 0.6s linear 2s slidein forwards, 0.6s linear 4s slideout forwards;
+}
+
+@keyframes slidein {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
+@keyframes slideout {
+  0% { opacity: 1;}
+  100% { opacity: 0;}
+}
+
+.fade-topia {
+  animation: 0.6s linear 5s fadeInOutTopiaLeaves forwards, 0.6s linear 6s moveUp forwards;
+  /* animation: fadeInOutTopiaLeaves forwards, moveUp forwards;
+  animation-duration: 2s, 2s; 
+  animation-delay: 6s, 7s; */
+}
+
+.skip-topia {
+  animation: 0.6s linear skipTopia forwards;
+  /* animation: fadeInOutTopiaLeaves forwards, moveUp forwards;
+  animation-duration: 2s, 2s; 
+  animation-delay: 6s, 7s; */
+}
+
+
+@keyframes skipTopia {
+  0% {
+    opacity: 0;
+    top: 65px;
+  }
+  100% {
+    opacity: 100%;
+    top: 65px;
+  }
+}
+
 
 @keyframes fadeInOutTopiaLeaves {
   0% {
@@ -465,9 +665,36 @@ input::placeholder {
   } 
 }
 
-.elementToFadeInAndOutText {
-  animation: fadeInOutText 2s linear 1 forwards;
-  animation-delay: 8s;
+@media screen and (max-width: 1400px) {
+  @keyframes moveUp {
+    0% {
+      top: 250px;
+    }
+    100% {
+      top: 12%;
+    } 
+  }
+}
+
+@media screen and (max-width: 800px) {
+  @keyframes moveUp {
+    0% {
+      top: 250px;
+    }
+    100% {
+      top: 15%;
+    } 
+  }
+}
+
+
+.fade-description {
+  animation: fadeInOutText 0.6s linear 1 forwards;
+  animation-delay: 6s;
+}
+
+.skip-description {
+  animation: fadeInOutText 0.6s linear 1 forwards;
 }
 
 @keyframes fadeInOutText {
@@ -482,6 +709,70 @@ input::placeholder {
   }
 }
 
+.fade-details {
+  animation: fadeInOutText 0.6s linear 1 forwards;
+  animation-delay: 6.5s;
+}
+
+@keyframes fadeInOutText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.skip-details {
+  animation: fadeInOutText 0.6s linear 1 forwards;
+}
+
+
+.fade-input {
+  animation: fadeInOutText 0.6s linear 1 forwards;
+  animation-delay: 7s;
+}
+
+@keyframes fadeInOutText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.skip-input {
+  animation: fadeInOutText 0.6s linear 1 forwards;
+}
+
+
+.fade-collections {
+  animation: fadeInOutText 0.6s linear 1 forwards;
+  animation-delay: 7s;
+}
+
+@keyframes fadeInOutText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.skip-collections {
+  animation: fadeInOutText 0.6s linear 1 forwards;
+}
 
 .fade-in-text {
   animation: fadeIn 1s forwards;
@@ -528,6 +819,43 @@ input::placeholder {
 @-ms-keyframes fadeInLeaves {
   0% { opacity: 0; }
   100% { opacity: 1; }
+} */
+
+
+/* .elementToFadeInAndOutSlow {
+  animation: fadeInOutSlow 3s linear 1 forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeInOutSlow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 53%;
+  }
+  100% {
+    opacity: 0;
+  }
+} */
+
+/* 
+
+.elementToFadeInAndOutTopia {
+  animation: fadeInOutTopia 3s linear 1 forwards;
+  animation-delay: 5s;
+}
+
+@keyframes fadeInOutTopia {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
 } */
 
 

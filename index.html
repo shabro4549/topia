@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" content="width=device-width, initial-scale=1" name="viewport" />
   <title>Jungle</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,72 +11,167 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="wrapper">
 
     <div class="videoContainer">
       <video autoplay loop muted>
-        <source src="videos/topia.mp4" type="video/mp4"> -->
+        <source src="videos/topia.mp4" type="video/mp4"> 
           <source src="videos/jungle.webm" type="video/webm">
       </video>
   </div>  
   <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
     <audio id="ID" loop>
-    <source src="videos/sabai.mp3" type="audio/mpeg">
+    <source src="videos/tribal.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
-    <img id="volume" src="images/volume-off.svg" class="play"></img>
-    <!-- <a href="https://www.eventbrite.ca/" class="button">RSVP</a> -->
+    <img id="volume" src="images/volume-off.svg" class="play off"></img>
+    <img id="skip" src="images/skip.png" class="skip"></img>
     <script>
-      document.addEventListener('click', musicPlay);
+
+var body = document.getElementById('wrapper');
+var skip = document.getElementById('skip');
+var volume = document.getElementById('volume');
+var ready = document.getElementById("ready");
+var but = document.getElementById("but");
+var sound = "off";
+
+if(body.addEventListener)
+  body.addEventListener("click", bodyClick, false);
+else
+  body.attachEvent("onclick", bodyClick);
+
+function bodyClick(event){
+  if(event.target == skip) {
+    skip.style.none = "none";
+    console.log('skipped');
+    console.log(event.target);
+
+  document.getElementById("but").style.visibility = "hidden";
+  document.getElementById("text1").style.visibility = "hidden";
+  document.getElementById("text2").style.visibility = "hidden";
+  document.getElementById("volume").style.visibility = "hidden";
+  document.getElementById("skip").style.visibility = "hidden";
+
+  document.getElementById("overlay").style.visibility = "visible";
+
+  document.getElementById("topia-leaves").classList.add("skip-topia");
+  document.getElementById("topia-leaves").style.opacity = "0";
+  document.getElementById("topia-leaves").style.visibility = "visible";
+
+  document.getElementById("description").classList.add("skip-description");
+  document.getElementById("description").style.visibility = "visible";
+  document.getElementById("description").style.opacity = "0";
+  document.getElementById("details").classList.add("skip-details");
+  document.getElementById("details").style.visibility = "visible";
+  document.getElementById("details").style.opacity = "0";
+  document.getElementById("input").classList.add("skip-input");
+  document.getElementById("input").style.visibility = "visible";
+  document.getElementById("input").style.opacity = "0";
+  document.getElementById("host").classList.add("skip-collections");
+  document.getElementById("host").style.display = "block";
+  }
+  if(event.target == body){
+    console.log("body");
+    musicPlay();
+  }
+}
+
 
 function musicPlay() {
-    // document.getElementById('ID').play();
-    document.getElementById('volume').src = "images/volume-on.svg";
-    
+  if(sound=="off"){
+    console.log("off");
+    sound="on";
+    volume.src = "images/volume-now.svg";
+  volume.style.height = '6.2%';
+  document.getElementById('ID').play();
+  document.getElementById('ID').muted = false;
+  } else {
+    console.log("on");
+    sound="off";
+    volume.src = "images/volume-off.svg";
+    document.getElementById('ID').muted = true;
+  }
 }
     </script>
+  <span id="text1"></span>
+  <span id="text2"></span>
 
-<div id="overlay"></div>
+  <div id="but" class="but floating">
+    <div id="ready" class="ready">I'M READY</div>
+  </div>
 
-<!-- <a></a> -->
-<div id="but" class="but floating">
-  <div class="ready">I'M READY</div>
-</div>
+  <div id="overlay"></div>
 
-      <span id="text1"></span>
-      <span id="text2"></span>
-      
-      <!-- <img id="button" class="button floating" src="images/button.svg"></img> -->
-      <img id="jpg" class="jpg" src="images/jpg-logo.png"></img>
-      <img id="presents" class="presents" src="images/presents.png"></img>
+  <img id="leaf-top" class="leaf-top" src="images/leaf-top.png"></img> 
+  <img id="leaf-bottom" class="leaf-bottom" src="images/leaf-bottom.png"></img> 
 
-      <!-- <div class="fade-in-image"> -->
-      <img id="logo" class="topia" src="images/topia-plain.png"></img>
-      <!-- </div> -->
-      
-      <img id="leaf-top" class="leaf-top" src="images/leaf-top.png"></img>
-      <img id="leaf-bottom" class="leaf-bottom" src="images/leaf-bottom.png"></img> 
-
-      <img id="topia-leaves" class="topia-leaves" src="images/topia-leaves.png"></img>
-
-      <p id="description">A rager in the jungle to celebrate the crypto community</p>
+  <img id="jpg" class="jpg" src="images/jpg-logo.png"></img>
+  <img id="presents" class="presents" src="images/presents.png"></img>
+  <!-- <div id="ending"> -->
+    <img id="topia-leaves" class="topia-leaves" src="images/topia-leaves.png"></img>
+    <div id="copy">
+      <h3 id="description">A rager in the jungle to celebrate the crypto community</h3>
       <img id="details" class="details" src="images/event-details.png"></img>
-
-
       <form action="https://www.eventbrite.ca/e/topia-tickets-541986515257" id="input" class="input">
         <input class="text-input" type="text" id="discount" name="discount" placeholder="Enter your VIP code here"><br><br>
         <input type="submit" hidden />
       </form>
 
-      <p id="collections">Hosted with</p>
-      <img id="alley" class="alley" src="images/alley.png"></img>
+    </div>
 
-      
+    <div id="host" class="host">
+      <div class="contents">
+        <h2>HOSTED BY</h2>
+        <img class="host-logo" src="images/host-logo.png"></img>
+        <p class="host-description">The Largest NFT Marketplace on Cardano</p>
+        <div class="collections">
+          <div class="tier1">
+            <img id="alley" class="alley" src="images/alley.png"></img>
+            <img id="alley" class="alley" src="images/oremob.png"></img>
+          </div>
+          <!-- <div class="tier2"> -->
+            <img id="kong" class="kong" src="images/chilledkong.png"></img>
+            <img id="kong" class="kong" src="images/claynay.jpg"></img>
+            <img id="kong" class="kong" src="images/yummi.jpeg"></img>
+          <!-- </div> -->
+        </div>
+      </div>
 
-  
+    </div>
+
+  <!-- </div> -->
+
+  <!-- <div id="collections">
+    <p id="hosted" class="hosted">Hosted with</p>
+    <img id="alley" class="alley" src="images/alley.png"></img>
+  </div> -->
+</div> 
+
+<!-- <div id="presenting-transition">
+  <img id="leaf-top" class="leaf-top" src="images/leaf-top.png"></img>
+  <img id="leaf-bottom" class="leaf-bottom" src="images/leaf-bottom.png"></img> 
+
+  <img id="jpg" class="jpg" src="images/jpg-logo.png"></img>
+  <img id="presents" class="presents" src="images/presents.png"></img>
+</div>
+<div id="end">
+  <img id="topia-leaves" class="topia-leaves" src="images/topia-leaves.png"></img>
+  <h3 id="description">A rager in the jungle to celebrate the crypto community</h3>
+  <img id="details" class="details" src="images/event-details.png"></img>
+  <form action="https://www.eventbrite.ca/e/topia-tickets-541986515257" id="input" class="input">
+    <input class="text-input" type="text" id="discount" name="discount" placeholder="Enter your VIP code here"><br><br>
+    <input type="submit" hidden />
+  </form>
+  <div id="collections">
+    <p id="hosted" class="hosted">Hosted with</p>
+    <img id="alley" class="alley" src="images/alley.png"></img>
+  </div>
+</div> 
   <svg id="filters">
       <defs>
           <filter id="threshold">
@@ -88,23 +183,7 @@ function musicPlay() {
       </defs>
   </svg>
 
-  <img id="topia" src="" class=""></img>
-<!-- <h1>
-  <a href="" class="typewrite" data-period="2000" data-type='[ 
-  "Deep in the jungle", 
-  "Sprawled across the globe, hidden amoung us.",
-  "Little is known about them", 
-  "but they are said to refer to themselves as ...", 
-  "Degens", 
-  "Are you one of them?",
-  "Now is your chance...",
-  "to come home."
-  ]'>
-
-
-    <span class="wrap"></span>
-  </a>
-</h1> -->
+  <img id="topia" src="" class=""></img> -->
 
   <script src="index.js" charset="utf-8"></script>
 </body>
