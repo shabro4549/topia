@@ -75,7 +75,7 @@ function bodyClick(event){
   document.getElementById("host").classList.add("skip-collections");
   document.getElementById("host").style.display = "block";
   }
-  if(event.target == body){
+  if(event.target == body || event.target == volume){
     console.log("body");
     musicPlay();
   }
