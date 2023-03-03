@@ -1,74 +1,3 @@
-// var TxtType = function (el, toRotate, period) {
-//   this.toRotate = toRotate;
-//   this.el = el;
-//   this.loopNum = 0;
-//   this.period = parseInt(period, 10) || 2000;
-//   this.txt = "";
-//   this.tick();
-//   this.isDeleting = false;
-// };
-
-// TxtType.prototype.tick = function () {
-//   if (this.loopNum >= this.toRotate.length) {
-//     this.el.innerHTML =
-//       '<span class="end">' +
-//       '<img src="images/topia-logo.png" class="topia">' +
-//       "</img>" +
-//       "</span>" +
-//       '<span class="end">' +
-//       '<a href="https://www.eventbrite.ca/" class="button">' +
-//       "RSVP";
-//     "</a>" + "</span>";
-//     return;
-//   }
-
-//   var fullTxt = this.toRotate[this.loopNum];
-
-//   if (this.isDeleting) {
-//     this.txt = fullTxt.substring(0, this.txt.length - 1);
-//   } else {
-//     this.txt = fullTxt.substring(0, this.txt.length + 1);
-//   }
-
-//   this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
-
-//   var that = this;
-//   var delta = 180 - Math.random() * 100;
-
-//   if (this.isDeleting) {
-//     delta /= 12;
-//   }
-
-//   if (!this.isDeleting && this.txt === fullTxt) {
-//     delta = this.period;
-//     this.isDeleting = true;
-//   } else if (this.isDeleting && this.txt === "") {
-//     this.isDeleting = false;
-//     this.loopNum++;
-//     delta = 500;
-//   }
-
-//   setTimeout(function () {
-//     that.tick();
-//   }, delta);
-// };
-
-// window.onload = function () {
-//   var elements = document.getElementsByClassName("typewrite");
-//   for (var i = 0; i < elements.length; i++) {
-//     var toRotate = elements[i].getAttribute("data-type");
-//     var period = elements[i].getAttribute("data-period");
-//     if (toRotate) {
-//       new TxtType(elements[i], JSON.parse(toRotate), period);
-//     }
-//   }
-//   // INJECT CSS
-//   var css = document.createElement("style");
-//   css.type = "text/css";
-//   css.innerHTML = ".typewrite > .wrap { }";
-//   document.body.appendChild(css);
-// };
-
 const elts = {
   text1: document.getElementById("text1"),
   text2: document.getElementById("text2"),
@@ -153,16 +82,10 @@ function animate() {
       return;
     } else {
       console.log("done");
-      // document.getElementById("but").classList.add("fade-in-image");
       document.getElementById("but").style.visibility = "visible";
       document.getElementById("but").addEventListener("click", animateTopia);
     }
   }
-  // document.getElementById("overlay").style.visibility = "visible";
-  // document.getElementById("jpg").style.visibility = "visible";
-  // document.getElementById("logo").style.visibility = "visible";
-  // document.getElementById("leaf-top").style.visibility = "visible";
-  // document.getElementById("leaf-bottom").style.visibility = "visible";
 }
 
 function animateTopia() {
@@ -171,18 +94,13 @@ function animateTopia() {
   document.getElementById("but").style.visibility = "hidden";
   document.getElementById("text1").style.visibility = "hidden";
   document.getElementById("text2").style.visibility = "hidden";
-  document.getElementById("volume").style.visibility = "hidden";
   document.getElementById("skip").style.visibility = "hidden";
-  // document.getElementById("it").style.visibility = "visible";
-  // document.getElementById("it").classList.add("fade-in");
 
   document.getElementById("overlay").style.visibility = "visible";
-  // document.getElementById("overlay").classList.add("fade-in");
-  // document.getElementById("overlay").style.visibility = "visible";
 
   document.getElementById("leaf-top").classList.add("fade-leaves");
   document.getElementById("leaf-top").style.visibility = "visible";
-  // document.getElementById("leaf-top-mobile").style.visibility = "visible";
+
   document.getElementById("leaf-bottom").classList.add("fade-leaves");
   document.getElementById("leaf-bottom").style.visibility = "visible";
 
@@ -207,23 +125,6 @@ function animateTopia() {
   document.getElementById("input").classList.add("fade-input");
   document.getElementById("input").style.visibility = "visible";
   document.getElementById("input").style.opacity = "0";
-
-  // document.getElementById("topia-leaves").style.bottom = "300px";
 }
 
 animate();
-
-// "<br>" +
-// "<br>" +
-// "<br>" +
-// "<br>" +
-// "<br>" +
-// '<span id="demo">' +
-// "NFT NYC" +
-// "<br>" +
-// "Nebula" +
-// "<br>" +
-// "April 13th, 2023" +
-// "<br>" +
-// "8pm" +
-// "</span>"

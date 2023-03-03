@@ -71,7 +71,7 @@ video {
   max-width: 3.25%;
   top: 6%;
   left: 5%;
-  z-index: 1;
+  z-index: 4;
 }
 
 .skip {
@@ -79,9 +79,7 @@ video {
   top: 8%;
   right: 5%;
   width: 6%;
-  /* min-width: 6%; */
-  /* height: 4%; */
-  z-index: 1;
+  z-index: 4;
 }
 
 @media only screen and (max-width: 768px){
@@ -90,18 +88,6 @@ video {
   object-fit: contain;
   }
   }
-/* 
-.topia {
-  visibility: hidden;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 385px;
-  margin: 0 auto;
-  height: 38%;
-  width: 100vw;
-  z-index: 2;
-} */
 
 .topia-leaves { 
   visibility: hidden;
@@ -622,18 +608,11 @@ input::placeholder {
 
 .fade-topia {
   animation: 0.6s linear 5s fadeInOutTopiaLeaves forwards, 0.6s linear 6s moveUp forwards;
-  /* animation: fadeInOutTopiaLeaves forwards, moveUp forwards;
-  animation-duration: 2s, 2s; 
-  animation-delay: 6s, 7s; */
 }
 
 .skip-topia {
   animation: 0.6s linear skipTopia forwards;
-  /* animation: fadeInOutTopiaLeaves forwards, moveUp forwards;
-  animation-duration: 2s, 2s; 
-  animation-delay: 6s, 7s; */
 }
-
 
 @keyframes skipTopia {
   0% {
@@ -645,6 +624,17 @@ input::placeholder {
     top: 65px;
   }
 }
+
+.fade-out {
+  animation: 0.6 fade0ut 10s;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
 
 
 @keyframes fadeInOutTopiaLeaves {
