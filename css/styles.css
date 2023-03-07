@@ -31,12 +31,13 @@ h2 {
   color: #898989;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 600px) {
   h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-bottom: 0;
   }
 }
 
@@ -99,6 +100,12 @@ video {
   width: 50%;
   height: auto;
   z-index: 2;
+}
+
+@media screen and (max-width: 600px) {
+  .topia-leaves {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -320,12 +327,18 @@ video {
 
 .details {
   visibility: hidden;
-  margin: 25px auto 10px;
-  width: 14%;
+  margin: 10px auto 10px;
+  width: 10%;
   height: auto;
   z-index: 2;
 }
 @media screen and (max-width: 800px) {
+  .details {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .details {
     width: 35%;
   }
@@ -355,21 +368,20 @@ video {
   /* visibility: hidden; */
   display: none;
   position: absolute;
-  background-color: black;
   width: 100vw;
-  height: 1000px;
-  top: 90%;
+  height: auto;
+  top: 62%;
 }
 @media screen and (max-width: 600px) {
   .host {
-    top: 85%;
+    top: 65%;
     height: 580px;
   }
 }
 
 #copy {
   position: absolute;
-  top:7%;
+  top:0%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -381,18 +393,18 @@ video {
 @media screen and (max-width: 600px) {
   #copy {
     top: 0%;
+    margin: 340px auto;
   }
 }
 
 
 .contents{
     position: absolute;
-    top:0;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     
-    margin: 50px auto;
+    margin: 30px auto;
     z-index: 3;
 
 }
@@ -425,14 +437,14 @@ video {
   top: 0;
   bottom: 50px;
   margin: 0 auto; */
-  margin: 3% 3%;
-  width: 11%;
+  margin: 1% 1%;
+  width: 7.5%;
   z-index: 2;
 }
 
 @media screen and (max-width: 600px) {
   .alley {
-    width: 30%;
+    width: 23%;
   }
 }
 
@@ -468,8 +480,8 @@ video {
   }
 }
 .host-logo {
-  width: 16%;
-  margin: 2% auto 0;
+  width: 13%;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 600px) {
@@ -501,8 +513,8 @@ video {
 }
 
 .text-input {
-  width: 32%;
-  height: 70px;
+  width: 26%;
+  height: 60px;
   padding: 12px 20px;
   box-sizing: border-box;
   background: rgba(172, 255, 155, 0.21);
@@ -511,7 +523,7 @@ border-radius: 12px;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
-font-size: 1.75vw;
+font-size: 1.1vw;
 line-height: 37px;
 text-align: center;
 color: #ACFF9B;
@@ -618,12 +630,45 @@ input::placeholder {
   0% {
     opacity: 0;
     top: 65px;
+    width: 40%;
   }
   100% {
     opacity: 100%;
     top: 65px;
+    width: 40%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  @keyframes skipTopia {
+    0% {
+      opacity: 0;
+      top: 65px;
+      width: 40%;
+    }
+    100% {
+      opacity: 100%;
+      top: 12%;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  @keyframes skipTopia {
+    0% {
+      opacity: 0;
+      top: 65px;
+      width: 40%;
+    }
+    100% {
+      opacity: 100%;
+      top: 65px;
+      width: 80%;
+    }
+  }
+}
+
 
 .fade-out {
   animation: 0.6 fade0ut 10s;
@@ -649,11 +694,27 @@ input::placeholder {
  @keyframes moveUp {
   0% {
     top: 250px;
+    width: 50%;
   }
   100% {
     top: 65px;
+    width: 40%;
   } 
 }
+
+/* @media screen and (max-width: 600px) {
+  @keyframes moveUp {
+    0% {
+      top: 250px;
+      width: 50%;
+    }
+    100% {
+      top: 65px;
+      width: 100%;
+    } 
+  }
+  
+} */
 
 @media screen and (max-width: 1400px) {
   @keyframes moveUp {
@@ -661,7 +722,8 @@ input::placeholder {
       top: 250px;
     }
     100% {
-      top: 12%;
+      top: 8%;
+      width: 45%;
     } 
   }
 }
