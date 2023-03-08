@@ -44,7 +44,7 @@ h2 {
 h3 { 
   visibility: hidden;
   color: #FFFFFF;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lexend", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.25rem;
@@ -903,6 +903,29 @@ input::placeholder {
   }
 } */
 
+#volume:hover {
+  cursor: pointer;
+}
 
+#skip:hover {
+  cursor: pointer;
+}
 
+#ready:hover {
+  cursor: pointer;
+}
 
+#description-black-background-wrapper {
+  position:relative;
+}
+
+#description-black-background {
+  background: rgba(0, 0, 0, 0.67);
+  filter: blur(16.5px);
+  border-radius: 59px;
+  height: 100%;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
