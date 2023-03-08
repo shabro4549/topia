@@ -108,12 +108,15 @@ video {
   }
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen (min-width: 600px) and (max-width: 900px) {
   .topia-leaves {
     width: 100%;
   }
-}
+} */
 
+.ready-button {
+  width: 50%;
+}
 .floating { 
   animation-name: floating;
   animation-duration: 3s;
@@ -248,20 +251,20 @@ video {
 .but{
   visibility: hidden;
   right: 0;
-  top: 110px;
+  top: 100px;
   margin: 0 auto;
-  align-items: flex-start;
+  /* align-items: flex-start;
   background: linear-gradient(180deg, rgba(126.4, 6.64, 132.81, 0.26) 0%, rgba(13.12, 101.68, 121.12, 0.26) 100%);
   border: 2px, solid;
   border-color: transparent;
   border-image: linear-gradient(rgba(255, 157, 255, 1), rgba(10, 175, 136, 1)) 30;
-  border-radius: 13px;
+  border-radius: 13px; */
   display: flex;
-  gap: 5.15px;
-  height: 1.7%;
+  /* gap: 5.15px; */
+  height: 5%;
   justify-content: center;
   overflow: hidden;
-  padding: 26px 53px;
+  /* padding: 26px 53px; */
   position: relative;
   width: fit-content;
   z-index: 5;
@@ -270,8 +273,7 @@ video {
 @media screen and (max-width: 800px) {
   .but {
     top: 60px;
-    height: 1.5%;
-    padding: 16px 63px;
+    height: 4.5%;
   }
 
   .ready {
@@ -726,8 +728,8 @@ input::placeholder {
       width: 80%;
     }
     100% {
-      top: 12%;
-      width: 80%;
+      top: 10%;
+      width: 90%;
     }
   }
 }
