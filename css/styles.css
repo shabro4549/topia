@@ -167,6 +167,14 @@ video {
   z-index: 1;
 }
 
+/* .box {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 10;
+} */
+
 .leaf-bottom {
   visibility: hidden;
   position: fixed;
@@ -234,6 +242,7 @@ video {
   text-align: center;
   text-fill-color: transparent;
   width: fit-content;
+  cursor: default;
 }
 
 .but{
@@ -428,15 +437,13 @@ video {
 } */
 .alley {
   border-radius: 50%;
-  /* position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 50px;
-  margin: 0 auto; */
   margin: 1% 1%;
   width: 7.5%;
   z-index: 2;
+}
+.alley:hover {
+  box-shadow: 0 0 2px 2px #ACFF9B; 
+  opacity: 90%;
 }
 
 @media screen and (max-width: 600px) {
