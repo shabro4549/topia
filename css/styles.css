@@ -157,7 +157,6 @@ video {
 
 .leaf-top {
   visibility: hidden;
-  /* opacity: 0; */
   position: fixed;
   left: 0;
   right: 0;
@@ -203,14 +202,6 @@ video {
   border-radius: 15px;
   height: 5%;
 }
-
-/* .kong {
-  position: absolute;
-  bottom: 0px;
-  right: 20%;
-  height: 25%;
-  z-index: 1;
-} */
 
 .end {
   font-size: 6rem;
@@ -390,13 +381,19 @@ video {
   z-index: 3;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   #copy {
     top: 0%;
-    margin: 340px auto;
+    margin: 220px auto;
   }
 }
 
+@media screen (min-width: 500px) and (max-height: 850px) {
+  #copy {
+    top: 0%;
+    margin: 300px auto;
+  }
+}
 
 .contents{
     position: absolute;
