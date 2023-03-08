@@ -706,40 +706,33 @@ input::placeholder {
   } 
 }
 
-/* @media screen and (max-width: 600px) {
-  @keyframes moveUp {
+@media screen and (max-width: 600px) {
+  @keyframes moveUp{
     0% {
-      top: 250px;
-      width: 50%;
-    }
-    100% {
+      opacity: 0;
       top: 65px;
-      width: 100%;
-    } 
-  }
-  
-} */
-
-@media screen and (max-width: 1400px) {
-  @keyframes moveUp {
-    0% {
-      top: 250px;
+      width: 40%;
     }
     100% {
-      top: 8%;
-      width: 45%;
-    } 
+      opacity: 100%;
+      top: 12%;
+      width: 100%;
+    }
   }
 }
 
 @media screen and (max-width: 800px) {
   @keyframes moveUp {
     0% {
-      top: 250px;
+      opacity: 0;
+      top: 65px;
+      width: 40%;
     }
     100% {
-      top: 15%;
-    } 
+      opacity: 100%;
+      top: 65px;
+      width: 80%;
+    }
   }
 }
 
